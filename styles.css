@@ -369,6 +369,354 @@ label {
   flex: 1;
 }
 
+/* ---------- 开局配件占用台 ---------- */
+
+.desk {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 251, 248, 0.94);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.desk .panel-head {
+  margin-bottom: 12px;
+}
+
+.desk-summary {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.desk-stat {
+  border-radius: 999px;
+  background: rgba(57, 116, 91, 0.12);
+  color: var(--green);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.desk-stat b {
+  font-size: 15px;
+}
+
+.desk-stat.frozen {
+  background: rgba(213, 162, 61, 0.16);
+  color: #9a6f14;
+}
+
+.desk-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(360px, 1fr) 320px;
+  gap: 12px;
+  align-items: start;
+}
+
+.desk-grid .panel {
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.session-form {
+  display: grid;
+  gap: 10px;
+}
+
+.form-caption {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.parts-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.parts-row {
+  grid-template-columns: 1fr 92px;
+  align-items: center;
+  gap: 8px;
+}
+
+.parts-row input {
+  padding: 8px;
+}
+
+.session-total {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.session-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.session-actions button {
+  flex: 1;
+}
+
+.desk-message {
+  min-height: 18px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.desk-message.error {
+  color: var(--red);
+}
+
+.desk-message.ok {
+  color: var(--green);
+}
+
+.desk-message.warn {
+  color: #9a6f14;
+}
+
+.table-board,
+.component-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.pool-title {
+  margin: 14px 0 8px;
+}
+
+.desk-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.desk-card.over {
+  border-color: var(--red);
+  background: rgba(179, 72, 72, 0.06);
+}
+
+.desk-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.desk-card-head strong {
+  font-size: 14px;
+}
+
+.quota {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.quota.over {
+  color: var(--red);
+}
+
+.meter {
+  height: 7px;
+  border-radius: 999px;
+  background: #e9ecef;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--blue);
+  transition: width 0.2s ease;
+}
+
+.desk-card.over .meter span {
+  background: var(--red);
+}
+
+.occupant-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.session-board {
+  display: grid;
+  gap: 10px;
+  max-height: 560px;
+  overflow: auto;
+}
+
+.session-card {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  gap: 7px;
+}
+
+.session-card.frozen {
+  border-left-color: var(--yellow);
+  background: rgba(213, 162, 61, 0.07);
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status-pill.active {
+  background: rgba(57, 116, 91, 0.13);
+  color: var(--green);
+}
+
+.status-pill.frozen {
+  background: rgba(213, 162, 61, 0.18);
+  color: #9a6f14;
+}
+
+.status-pill.finished {
+  background: rgba(49, 95, 134, 0.12);
+  color: var(--blue);
+}
+
+.status-pill.cancelled {
+  background: rgba(104, 112, 121, 0.16);
+  color: var(--muted);
+}
+
+.session-line {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  border-radius: 6px;
+  background: #eef2f5;
+  color: var(--ink);
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.session-card-actions button {
+  padding: 7px 10px;
+  font-size: 13px;
+  flex: 1 1 auto;
+}
+
+.history-panel {
+  margin-top: 12px;
+}
+
+.history-board {
+  display: grid;
+  gap: 6px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eef0f2;
+  padding-bottom: 7px;
+  font-size: 13px;
+}
+
+.history-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.history-item time {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- 游戏配件方案编辑器 ---------- */
+
+.requirements-section .section-hint {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.req-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.req-row {
+  display: grid;
+  grid-template-columns: 1fr 84px 34px;
+  gap: 6px;
+}
+
+.req-row input,
+.req-row select {
+  padding: 8px;
+}
+
+.req-row button {
+  padding: 0;
+}
+
+.req-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.req-actions button {
+  flex: 1;
+}
+
 @media (max-width: 1160px) {
   .topbar {
     align-items: stretch;
@@ -376,12 +724,17 @@ label {
   }
 
   .controls,
-  .layout {
+  .layout,
+  .desk-grid {
     grid-template-columns: 1fr;
   }
 
   .detail-panel {
     position: static;
+  }
+
+  .session-board {
+    max-height: none;
   }
 }
 

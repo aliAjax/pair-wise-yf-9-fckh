@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>桌游规则遗忘点卡片库</title>
+    <title>桌游规则卡片库 · 开局配件占用台</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -61,6 +61,60 @@
             <option value="complexity">复杂度</option>
           </select>
         </label>
+      </section>
+
+      <section class="desk">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">开局登记</p>
+            <h2>开局配件占用台</h2>
+          </div>
+          <div class="desk-summary" id="deskSummary"></div>
+        </div>
+
+        <div class="desk-grid">
+          <form class="panel session-form" id="sessionForm">
+            <h3>新开一局</h3>
+            <label>
+              游戏
+              <select id="sessionGameSelect"></select>
+            </label>
+            <label>
+              桌位
+              <select id="sessionTableSelect"></select>
+            </label>
+            <div>
+              <span class="form-caption">登记配件数量</span>
+              <div id="sessionPartsRows" class="parts-rows"></div>
+            </div>
+            <p id="sessionTotal" class="session-total"></p>
+            <div class="session-actions">
+              <button class="primary" type="submit" id="openSessionBtn">开局占用</button>
+              <button type="button" id="shortageBtn">缺件登记</button>
+            </div>
+            <p class="desk-message" id="sessionMessage" role="status"></p>
+          </form>
+
+          <section class="panel desk-board">
+            <h3>桌位占用</h3>
+            <div id="tableBoard" class="table-board"></div>
+            <h3 class="pool-title">共用配件库存</h3>
+            <div id="componentBoard" class="component-board"></div>
+          </section>
+
+          <section class="panel desk-sessions">
+            <h3>未结束局</h3>
+            <div id="sessionBoard" class="session-board"></div>
+          </section>
+        </div>
+
+        <section class="panel history-panel">
+          <div class="panel-head">
+            <h3>历史局（已结束 / 已取消，占用已释放）</h3>
+            <button type="button" id="clearHistoryBtn">清空历史</button>
+          </div>
+          <div id="historyBoard" class="history-board"></div>
+        </section>
       </section>
 
       <section class="layout">
@@ -121,6 +175,8 @@
       </section>
     </main>
 
+    <script src="occupancy.js"></script>
+    <script src="store.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
