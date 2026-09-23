@@ -119,8 +119,45 @@
           <div id="detailView"></div>
         </aside>
       </section>
+
+      <section class="panel station-panel">
+        <div class="panel-head">
+          <h2>开局配件占用台</h2>
+          <span id="stationSummary"></span>
+        </div>
+        <div class="station-grid">
+          <form id="sessionForm" class="session-form">
+            <h3>登记开局</h3>
+            <label>
+              游戏
+              <select id="sessionGameSelect"></select>
+            </label>
+            <label>
+              桌位
+              <select id="sessionTableSelect"></select>
+            </label>
+            <div id="sessionItemsInputs" class="item-inputs"></div>
+            <p class="form-hint">登记数量低于游戏需求会记为缺件局并冻结，之后可重启补齐。</p>
+            <button class="primary" type="submit">登记开局</button>
+            <p id="stationMessage" class="station-message" aria-live="polite"></p>
+          </form>
+          <div class="station-col">
+            <h3>桌位占用</h3>
+            <div id="tableBoard" class="table-board"></div>
+            <h3>共用配件</h3>
+            <ul id="accessoryBoard" class="accessory-board"></ul>
+          </div>
+          <div class="station-col">
+            <h3>未结束局</h3>
+            <div id="sessionBoard" class="session-board"></div>
+            <h3>历史局</h3>
+            <div id="historyBoard" class="history-board"></div>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <div id="toast" class="toast" hidden></div>
     <script src="app.js"></script>
   </body>
 </html>
